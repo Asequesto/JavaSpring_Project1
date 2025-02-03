@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{'/css/bootstrap.min.css'}">
+    <script type="text/javascript" th:src="@{'/js/bootstrap.bundle.js'}"></script>
+  </head>
+<body>
+
+<div class="container-fluid">
+  <div th:insert="navbar.html">
+
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="row bg-info p-5">
+    <div class="col-12">
+      <h4 class="text-center">
+        Welcome TO KAZAKHSTAN
+      </h4>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5 " style="min-height: 800px;">
+  <div class="row">
+    <div class="col-9">
+      <div layout:fragment="siteContent">
+      </div>
+    </div>
+    <div class="col-3" th:insert="sidebar.html">
+
+    </div>
+  </div>
+</div>
+
+<div th:insert="footer.html">
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="main_layout.html"
+>
+
+<div layout:fragment="siteContent">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Duration</th>
+            <th style="width: 10%;">Details</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each = "muz :${muzikalar}" th:style="${muz.duration >= 180?'color:green;': 'color:red;'}">
+            <td th:text="${muz.id}"></td>
+            <td th:text="${muz.name}"></td>
+            <td th:text="${muz.authorModel.fullName}"></td>
+            <td th:text="${muz.duration}"></td>
+            <td>
+                <a th:href="@{'/details/' + ${muz.id}}" class="btn btn-primary btn-sm">DETAILS</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
